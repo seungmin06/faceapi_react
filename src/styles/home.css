@@ -1,0 +1,117 @@
+@font-face {
+    font-family: '런드리';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/TTLaundryGothicB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    font-family: "런드리";
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: black;
+}
+
+#wrap {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#status {
+    display: block;
+    background-color: aqua;
+    padding: 10px 20px;
+    transition: .5s;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 30px;
+}
+
+#status.er {
+    background-color: red;
+    animation: er 0.1s 4 alternate;
+}
+
+#status.end {
+    background-color: greenyellow;
+    animation: end .5s;
+}
+
+@keyframes er {
+    from {
+      transform: rotate(1deg);
+    }
+    to {
+      transform: rotate(-1deg);
+    }
+}
+
+@keyframes end {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+      }
+}
+
+
+#camera {
+    position: relative;
+    height: 300px;
+}
+
+#video,
+#overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+#video {
+    z-index: 1;
+}
+
+#overlay {
+    z-index: 2;
+}
+
+
+input {
+    font-size: 30px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 30px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#wrap > button {
+    position: absolute;
+    right: 50px;
+}
+
+
+#wrap > button > a{
+    font-size: 20px;
+    display: block;
+    transition: .2s;
+    padding: 20px;
+
+}
+#wrap > button > a:hover {
+    background-color: aqua;
+}
